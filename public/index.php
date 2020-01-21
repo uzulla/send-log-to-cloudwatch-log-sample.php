@@ -15,4 +15,22 @@ $monolog = \LogSample::getMonoLog();
 $monolog->notice("Hello!" . microtime());
 ?>
 
-logged, see console!!
+Notice logged, see console!!<br>
+<br>
+... and throw exception.
+<?php
+try{
+    throw new \Exception("Woooo I am Exception!!");
+}catch(\Exception $e){
+    $monolog = \LogSample::getMonoLog();
+    $monolog->error(
+        "I got exception",
+        [
+            'message'=>$e->getMessage(),
+            'file'=>$e->getFile(),
+            'line'=>$e->getLine(),
+            'trace'=>$e->getTrace()
+        ]
+    );
+}
+?>
