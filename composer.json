@@ -1,0 +1,8 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.133",
+        "monolog/monolog": "^2.0",
+        "maxbanton/cwh": "^2.0",
+        "vlucas/phpdotenv": "^4.1"
+    }
+}
